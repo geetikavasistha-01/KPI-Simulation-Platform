@@ -1,8 +1,10 @@
+import os
+from dotenv import load_dotenv
 import requests
 
-API_KEY = 'AIzaSyDM33mSfg-QENvSGyS4Y1MOvWdiGsP5MZI'
-ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent'
-
+load_dotenv()
+API_KEY = os.environ.get("API_KEY")
+ENDPOINT = os.environ.get("ENDPOINT")
 
 def call_gemini_api(messages):
     headers = {
